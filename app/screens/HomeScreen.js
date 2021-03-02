@@ -25,7 +25,6 @@ function HomeScreen(props) {
       })}
     >
       <HomeStack.Screen name="homeFeed" component={HomeFeedScreen} />
-      <HomeStack.Screen name="postDetail" component={PostDetailScreen} />
     </HomeStack.Navigator>
   );
 }

@@ -3,8 +3,8 @@ import {
   View,
   Text,
   Image,
-  TouchableOpacity,
   StyleSheet,
+  TouchableOpacity,
   FlatList,
   TextInput,
 } from "react-native";
@@ -16,7 +16,7 @@ for (let i = 0; i < 20; i++) {
   comments.push({ name: "someone", comment: "comment about the game" });
 }
 
-function PostDetailScreen(props) {
+function LogDetailScreen(props) {
   const renderItem = ({ item }) => {
     return (
       <View style={{ flexDirection: "row", padding: 10 }}>
@@ -37,25 +37,48 @@ function PostDetailScreen(props) {
   };
   return (
     <View style={{ flex: 1 }}>
-      <View style={{ flexDirection: "row" }}>
-        <TouchableOpacity>
-          <Image
-            source={require("../assets/profile.jpeg")}
-            style={{ width: 60, height: 60, borderRadius: 100, margin: 10 }}
-          />
-        </TouchableOpacity>
-        <TouchableOpacity style={{ alignSelf: "center" }}>
-          <Text style={{ fontWeight: "bold" }}>뿌망</Text>
-        </TouchableOpacity>
-      </View>
       <View
         style={{
-          padding: 10,
+          //   flex: 1,
+          flexDirection: "row",
+          paddingTop: 20,
+          paddingBottom: 20,
           borderBottomWidth: 1,
           borderBottomColor: Color.themeOpacity,
         }}
       >
-        <Text>ㅁㄴㅇㄹㅁㄴㄹㅇ</Text>
+        <TouchableOpacity
+          style={{
+            flex: 1,
+            flexDirection: "row",
+            justifyContent: "space-around",
+          }}
+        >
+          <View>
+            <Image
+              source={require("../assets/zhangjike.png")}
+              style={styles.profileImage}
+            />
+            <Text style={{ alignSelf: "center" }}>zhang</Text>
+          </View>
+          <Text style={{ alignSelf: "center" }}>3</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={{
+            flex: 1,
+            flexDirection: "row",
+            justifyContent: "space-around",
+          }}
+        >
+          <Text style={{ alignSelf: "center" }}>1</Text>
+          <View>
+            <Image
+              source={require("../assets/timo.png")}
+              style={styles.profileImage}
+            />
+            <Text style={{ alignSelf: "center" }}>timo</Text>
+          </View>
+        </TouchableOpacity>
       </View>
       <View
         style={{
@@ -96,9 +119,14 @@ function PostDetailScreen(props) {
 }
 
 const styles = StyleSheet.create({
+  profileImage: {
+    width: 100,
+    height: 100,
+    borderRadius: 100,
+  },
   icon: {
     padding: 5,
   },
 });
 
-export default PostDetailScreen;
+export default LogDetailScreen;

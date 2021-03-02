@@ -1,23 +1,22 @@
 import React from "react";
 import { View, Text, FlatList } from "react-native";
 
-import LogFeed from "../feeds/LogFeed";
-import TextFeed from "../feeds/TextFeed";
-import ImageFeed from "../feeds/ImageFeed";
+import LogPost from "../posts/LogPost";
+import PingTalkPost from "../posts/PingTalkPost";
 import Profile from "../profiles/Profile";
 
 const Data = [
   { type: "log" },
-  { type: "text" },
-  { type: "image" },
+  { type: "talk" },
+  { type: "talk" },
   { type: "log" },
   { type: "log" },
-  { type: "text" },
-  { type: "image" },
+  { type: "talk" },
+  { type: "talk" },
   { type: "log" },
-  { type: "text" },
+  { type: "talk" },
   { type: "log" },
-  { type: "image" },
+  { type: "talk" },
 ];
 
 function HomeFeedScreen(props) {
@@ -26,21 +25,14 @@ function HomeFeedScreen(props) {
       return (
         <View style={{ flexDirection: "row", justifyContent: "space-around" }}>
           <Profile />
-          <LogFeed />
+          <LogPost navigation={props.navigation} />
         </View>
       );
-    } else if (item.type === "text") {
+    } else if (item.type === "talk") {
       return (
         <View style={{ flexDirection: "row", justifyContent: "space-around" }}>
           <Profile />
-          <TextFeed />
-        </View>
-      );
-    } else if (item.type === "image") {
-      return (
-        <View style={{ flexDirection: "row", justifyContent: "space-around" }}>
-          <Profile />
-          <ImageFeed />
+          <PingTalkPost navigation={props.navigation} />
         </View>
       );
     } else {
